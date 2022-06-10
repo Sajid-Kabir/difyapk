@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title></title>
+
+<style type="text/css">
+
+@font-face {
+
+  font-family: 'Product';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_semibold.ttf);
+
+}
+
+@font-face {
+
+  font-family: 'OS Bold';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_bold.ttf);
+
+}
+
+@font-face {
+
+  font-family: 'OS Regular';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_regular.ttf);
+
+}
+
+nav {
+
+height:56px;
+
+background:#35363A;
+
+margin:6px;
+
+border-radius:10px;
+
+box-shadow:0 0 5px rgba(0,0,0,.2);
+
+display:flex;
+
+align-items:center;
+
+}
+
+nav input{
+
+background:transparent;
+
+outline:none;
+
+margin-left:14px;
+
+border:none;
+
+color:#aaa;
+
+font-size:14px;
+
+flex-grow:1;
+
+}
+
+nav img {
+
+height:34px;
+
+width:34px;
+
+border-radius:50px;
+
+border:1.5px solid #2196F3;
+
+margin-right:8px;
+
+}
+
+body {
+
+background:#202125;
+
+font-family:Product;
+
+}
+
+.tb-top {
+
+font-family:OS Bold;
+
+font-size:17.5px;
+
+color:#dedede;
+
+margin:26px 14px 20px 14px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.tb-top span {
+
+position:absolute;
+
+right:24px;
+
+color:#1976D2;
+
+font-size:13px;
+
+font-weight:700;
+
+font-family:none;
+
+}
+
+.viewpager {
+
+white-space:nowrap;
+
+overflow:scroll;
+
+display:flex;
+
+margin-top:26px;
+
+}
+
+.viewpager::-webkit-scrollbar {
+
+    width: 0;  /* Remove scrollbar space */
+
+    background: transparent;  /* Optional: just make scrollbar invisible */
+
+}
+
+/* Optional: show position indicator in red */
+
+.viewpager::-webkit-scrollbar-thumb {
+
+    background:transparent;
+
+}
+
+.viewpager .vp-node {
+
+width:210px;
+
+margin:0px 34px 0 18px;
+
+}
+
+.vp-node > img{
+
+width:208px;
+
+height:118px;
+
+object-fit: cover;
+
+border-radius:8px;
+
+margin-bottom:12px;
+
+background:white;
+
+}
+
+.vp-node-btm {
+
+display:flex;
+
+}
+
+.vp-node-btm > img{
+
+height:58px;
+
+min-width:58px;
+
+border-radius:8px;
+
+background:white;
+
+}
+
+.vp-node-rgt{
+
+color:white;
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+white-space:nowrap;
+
+margin-left:6px;
+
+justify-content:center;
+
+}
+
+.vp-node-rgt .title{
+
+background-image: linear-gradient(90deg, #dedede 80%, rgba(32,33,37,1) 90%);
+
+font-family:Product;
+
+  background-size: 100%;
+
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent; 
+
+  -moz-background-clip: text;
+
+  -moz-text-fill-color: transparent;
+
+}
+
+.vp-node-rgt .category {
+
+font-size:11px;
+
+color:#9e9e9e;
+
+font-family:OS Regular;
+
+}
+
+.vp-node-rgt .size {
+
+font-size:11px;
+
+color:#9e9e9e;
+
+font-family:Product;
+
+}
+
+.apps{
+
+white-space:nowrap;
+
+overflow:scroll;
+
+display:flex;
+
+}
+
+.apps::-webkit-scrollbar {
+
+    width: 0;  /* Remove scrollbar space */
+
+    background: transparent;  /* Optional: just make scrollbar invisible */
+
+}
+
+/* Optional: show position indicator in red */
+
+.apps::-webkit-scrollbar-thumb {
+
+    background:transparent;
+
+}
+
+.app-node {
+
+margin:0px 23px 0 20px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.app-node img{
+
+height:88px;
+
+width:88px;
+
+border-radius:14px;
+
+background:white;
+
+}
+
+.app-node span {
+
+color:#dedede;
+
+margin-top:3px;
+
+font-size:10px;
+
+max-width:88px;
+
+white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+}
+
+footer {
+
+height:55px;
+
+width:100vw;
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+background:#202125;
+
+border-top:1.5px solid #4B4C50;
+
+}
+
+</style>
+
+<body>
+
+</head>
+
+<body>
+
+<nav>
+
+	<svg style="margin-left:16px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-menu" width="24" height="24" viewBox="0 0 24 24" fill="#999FA6"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>	<input placeholder="Search" >
+
+	<img src="https://sketchub.in/storage/user_avatars/53875.png" >
+
+	</nav>
+
+<div class="tb-top" >Editor's Choice<span>SEE MORE</span></div>
+
+<section class="viewpager" >
+
+	<div class="vp-node" >
+
+		<img>
+
+		<div class="vp-node-btm" >
+
+			<img>
+
+			<div class="vp-node-rgt">
+
+				<span class="title" >Audio Visualiser Example</span>
+
+				<span class="category" >Music & Audio</span>
+
+				<span class="size" >1.0 MB</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="vp-node" >
+
+		<img>
+
+		<div class="vp-node-btm" >
+
+			<img>
+
+			<div class="vp-node-rgt">
+
+				<span class="title" >Audio Visualiser Example</span>
+
+				<span class="category" >Music & Audio</span>
+
+				<span class="size" >1.0 MB</span>
+
+			</div>
+
+		</div>
+
+	
+
+	</div>
+
+	<div class="vp-node" >
+
+		<img>
+
+		<div class="vp-node-btm" >
+
+			<img>
+
+			<div class="vp-node-rgt">
+
+				<span class="title" >Audio Visualiser Example</span>
+
+				<span class="category" >Music & Audio</span>
+
+				<span class="size" >1.0 MB</span>
+
+			</div>
+
+		</div>
+
+	
+
+	</div>
+
+</section>
+
+<div class="tb-top" style="margin-top:36px"  >New and Updated<span>SEE MORE</span></div>
+
+<div class="apps" >
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	
+
+</div>
+
+<div class="tb-top" style="margin-top:46px"  >New and Updated<span>SEE MORE</span></div>
+
+<div class="apps" >
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	<div class="app-node" >
+
+		<img><span>Project Developer Bag</span>
+
+	</div>
+
+	
+
+</div>
+
+<footer>
+
+</footer>
+
+</body>
+
+</html>
