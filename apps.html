@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+
+nav{
+
+position:fixed;
+
+height:56px;
+
+width:100vw;
+
+background:#202125;
+
+top:0;
+
+left:0;
+
+box-shadow:0 -0px 5px rgba(0,0,0,.5);
+
+}
+
+@font-face {
+
+  font-family: 'Product';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_semibold.ttf);
+
+}
+
+@font-face {
+
+  font-family: 'OS Bold';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_bold.ttf);
+
+}
+
+@font-face {
+
+  font-family: 'OS Regular';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: local('Open Sans'), local('OpenSans'), url(opensans_regular.ttf);
+
+}
+
+body {
+
+background:#202125;
+
+font-family:Product;
+
+}
+
+.top{
+
+/*margin-top:56px;*/
+
+padding:5px 12px 6px 12px;
+
+display:flex;
+
+}
+
+.top img{
+
+background:white;
+
+height:85px;
+
+width:85px;
+
+border-radius:10px;
+
+}
+
+.top .titlendev {
+
+color:white;
+
+font-size:22px;
+
+margin-left:18px;
+
+font-weight:400;
+
+}
+
+.top .titlendev a {
+
+font-size:13px;
+
+display:block;
+
+text-decoration:none;
+
+color:#1976D3;
+
+margin-top:2px;
+
+}
+
+.chipset {
+
+padding:23px 12px 4px 12px;
+
+font-size:10px;
+
+color:#bdbdbd;
+
+font-family:OS Regular;
+
+}
+
+.chipset span{
+
+border:.1px solid #707072;
+
+border-radius:20px;
+
+padding:7px 8px;
+
+margin-right:8px;
+
+}
+
+.download-btn {
+
+margin:24px 12px 6px 12px;
+
+width:calc(100% - 24px);
+
+background:#1976D3;
+
+border:none;
+
+padding:12px 0;
+
+font-size:13px;
+
+color:white;
+
+font-family:OS Regular;
+
+border-radius:4px;
+
+}
+
+.description {
+
+font-family:OS Regular;
+
+margin:10px 12px 6px 12px;
+
+border-radius:8px;
+
+border:1.5px solid #707072;
+
+background:#2C2D31;
+
+font-size:10px;
+
+color:#DEDEE0;
+
+padding:10px;
+
+}
+
+.read-more {
+
+color:#DEDEE0;
+
+font-size:16px;
+
+margin:16px 12px 16px 12px;
+
+font-weight:500;
+
+font-family:OS Bold;
+
+display:flex;
+
+}
+
+.screenshots {
+
+margin:16px 12px 0px 12px;
+
+overflow:scroll hidden;
+
+white-space:nowrap;
+
+}
+
+.screenshots img {
+
+height:280px;
+
+width:140px;
+
+background:white;
+
+border-radius:10px;
+
+margin-right:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!--<nav>
+
+</nav>-->
+
+	<div class="top" >		<img>
+
+		<span class="titlendev" >
+
+		Dialer
+
+		<a href="extremekrish.github.io" >Extreme_Krish</a>
+
+		</span>
+
+	</div>
+
+	<div class="chipset" >
+
+		<span style="background:#F5511E;color:white;border-color:#F5511E" >4 likes</span>
+
+		<span>UI & UX</span>
+
+		<span>Sketchware Project</span>
+
+	</div>
+
+	<button class="download-btn" >Download Project</button>
+
+	
+
+	<div class="description" >
+
+		Loream Ipsum<br>Dolor Sit Amet<br>.<br>.<br>.<br>Extreme Krish
+
+	</div>
+
+	
+
+	<div class="read-more" >
+
+		<span style="flex-grow:1;" >Read more</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-arrow-right" width="26" height="26" fill="#9BA0A6" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+
+	</div>
+
+	
+
+	<div class="screenshots" >
+
+		<img><img><img><img>
+
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+
+    var applist = {
+
+        1 : {
+
+            name : "PMusic",
+
+            pack : "com.extremekrish.apk",
+
+            icon : "https://i.imgur.com/NbgLRlt.jpg",
+
+            url : "https://code.sololearn.com/WShE7Fijk2lK/?ref=app",
+
+            about : "com.extremekrish.apk",
+
+            tags : ["UI & UX","Sketchware project"],
+
+            screenshots : ["","","",""],
+
+            owner : "Extreme_Krish"
+
+        }
+
+    }
+
+    
+
+    var url_string = window.location.href;
+
+    var url = new URL(url_string);
+
+    var id = url.searchParams.get("id");
+
+    console.log(id);
+
+    
+
+    var cout = '';
+
+    for (i in applist) {
+
+if(applist[i].pack == id){
+
+getData(applist[i]);
+
+} else {
+
+if(id == applist[i].pack){
+
+} else {
+
+}
+
+}
+
+    }
+
+});
+
+function getData(map){
+
+document.querySelector(".titlendev").innerText = map.name
+
+}
+
+</script>
+
+<div class="store" ></div>
+
+</body>
+
+</html>
